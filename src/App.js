@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+
 import './App.css';
+import ProfileComponent from './Profile/ProfileComponent';
 
 function App() {
+  const Tab = [
+    {
+      FullName:'Achraf Khemakhem',
+      Bio: 'Ingenieur',
+      Profession:'Full Stack JS'
+    }
+  ]
+  const handleName = (FullName) => alert(` ${FullName}`)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        Tab.map(el=> <ProfileComponent donnee={el} handleName={handleName}>
+
+          <img src="./logo192.png" alt="logo"/>
+        </ProfileComponent>)
+      }
+      
     </div>
   );
 }
